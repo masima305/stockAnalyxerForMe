@@ -1,0 +1,5 @@
+1. db schema `findata` DEFAULT CHARACTER SET utf8 ;
+2. db ver = MySQL Server 8.0,21
+3. db ip 127.0.0.1:3306
+4. db id = finmanager / 1234
+
