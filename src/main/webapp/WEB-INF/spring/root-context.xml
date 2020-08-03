@@ -12,6 +12,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<context:property-placeholder location="classpath*:config/database.properties" /> 	
 		
 	<!-- jdbc모듈을 이용하여 dataSource추가하기. -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -20,4 +21,18 @@
         <property name="username" value="finmanager"></property>   
         <property name="password" value="1234"></property>
     </bean>
+    
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="main\webapp\resources\config\mybatis-config.xml"/>
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:mappers/mydao-mapper.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory"/>
+	</bean>    	
 </beans>
