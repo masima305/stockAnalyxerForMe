@@ -27,7 +27,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/main.do", method = RequestMethod.GET)
 	public String home(Locale locale, Model model)throws Exception {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
@@ -38,7 +38,7 @@ public class HomeController {
 		HomeVO hv = homeService.selectTest();
 		System.out.println(hv.getAaa());
 		
-		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("serverTime", formattedDate+" : "+hv.getAaa() );
 		
 		return "home";
 	}
