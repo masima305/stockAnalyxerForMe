@@ -7,6 +7,7 @@ import java.util.Locale;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,6 +22,9 @@ public class HomeController {
 	
 	@Autowired
 	HomeService homeService;
+	
+	@Value("#{crlSet['croll.test']}")
+	String test;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -38,7 +42,7 @@ public class HomeController {
 		HomeVO hv = homeService.selectTest();
 		System.out.println(hv.getAaa());
 		
-		model.addAttribute("serverTime", formattedDate+" : "+hv.getAaa() );
+		model.addAttribute("serverTime", test+" : "+formattedDate+" : "+hv.getAaa() );
 		
 		return "home";
 	}
