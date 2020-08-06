@@ -25,23 +25,12 @@ public class HomeController {
 	
 	@Autowired
 	HomeService homeService;
-	
-	@Value("#{crlSet['croll.naversel.coinfosel.mthree']}")
-	String test;
-	
-	@Value("#{crlSet['croll.naver.coinfoS']}")
-	String COINFOS;
-	
-	@Value("#{crlSet['croll.naver.coinfoE']}")
-	String COINFOE;
-	
-//	재무연도
+	//지금은 이렇게 가지고오지마는, 나중에는 뭔가 대책이 필요함. XML로 주입해서 VO같은걸 하나 만드는게 좋지않나 싶음.
+	@Value("#{crlSet['croll.naver.main']}")
+	String MAIN_URL;
+
 	@Value("#{crlSet['croll.naversel.coinfosel.thisyear']}")
-	String mfiveYear;
-	
-	@Value("#{crlSet['croll.naver.coinfosel.mfour']}")
-	String mfourYear;
-	
+	String LABLE_THISYEAR;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -58,7 +47,7 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		HomeVO hv = homeService.selectTest();
 		
-		String ARTICLE_URL = COINFOS+"089010"+COINFOE;
+		String ARTICLE_URL = MAIN_URL+"089010";
 		System.out.println(ARTICLE_URL);
 		//페이지 긁어서 가지고옴
 		Document rawData = Jsoup.connect(ARTICLE_URL)
@@ -71,7 +60,7 @@ public class HomeController {
 		
 		//#QmZIZ20rMn > table:nth-child(2) > thead > tr:nth-child(2) > th.r03c06.bg
 
-		element = rawData.select(".h_company");
+		element = rawData.select(LABLE_THISYEAR);
 		String a = element.html();
 		String b = element.text();
 		System.out.println("!@!@"+a);
@@ -98,7 +87,7 @@ public class HomeController {
 //			현금배당성향	현금배당액(전체)/(지배주주지분)당기순이익
 //			발행주식수	보통주 기말발행주식수 (자본금 변동 이벤트 중 수정계수가 발생하는 경우 과거 데이터가 소급됨
 //			
-		model.addAttribute("serverTime", test+" : "+formattedDate+" : "+hv.getAaa()+"<br>"+a+"<br>"+b+"<br>"+rawData.html());
+		model.addAttribute("serverTime", " : "+formattedDate+" : "+hv.getAaa()+"<br>"+a+"<br>"+b+"<br>");
 		
 		return "home";
 	}
