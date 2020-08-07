@@ -10,7 +10,9 @@ public class HomeService {
 	HomeDao homeDao;
 
 	public HomeVO selectTest() throws Exception	{
+		homeDao.selectTtest();
 		return homeDao.selectTest();
 	}
+	
 	
 }

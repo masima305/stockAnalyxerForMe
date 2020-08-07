@@ -13,5 +13,7 @@ public class HomeDao {
 	public HomeVO selectTest() throws Exception	{
 		return sqlSession.selectOne("mappers.mydao-mapper.selectTest");
 	}
-	
+	public HomeVO selectTtest() throws Exception	{
+		return sqlSession.selectOne("tsts-mapper.selectTest");
+	}
 }
