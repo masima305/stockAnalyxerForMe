@@ -2,4 +2,4 @@
 2. db ver = MySQL Server 8.0,21
 3. db ip 127.0.0.1:3306
 4. db id = finmanager / 1234
-
+5. stag = QYtT9954Tyr!@

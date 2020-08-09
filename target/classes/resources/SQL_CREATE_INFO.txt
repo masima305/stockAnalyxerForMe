@@ -1,14 +1,14 @@
 테이블 생성 명세
 
-1. <TB_STOKA_STOK_LIST> 주식 기본정보 테이블(VO 완성)
-CREATE TABLE IF NOT EXISTS `mydb`.`TB_STOKA_STOK_LIST` (
+1. <TB_STOKA_STOK_LIST> 주식 기본정보 테이블(DB 반영)
+CREATE TABLE IF NOT EXISTS `TB_STOKA_STOK_LIST` (
 
   `STOK_ID` 		VARCHAR(10) NOT NULL COMMENT '주식 고유번호',
   `STOK_NM` 		VARCHAR(60) 	NULL COMMENT '주식 이름',
-  `STOK_REGD_DT` 	DATE 			NULL COMMENT '주식 입력일자',
-  `STOK_UPDT` 		DATE 			NULL COMMENT '주식정보 업데이트 일자',
+  `STOK_REGD_DT` 	DATETIME 		NULL COMMENT '주식 입력일자',
+  `STOK_UPDT` 		DATETIME 		NULL COMMENT '주식정보 업데이트 일자',
   PRIMARY KEY (`STOK_ID`))
-ENGINE = InnoDB
+ENGINE = InnoDB;
 
 2. 당기순이익 테이블
 

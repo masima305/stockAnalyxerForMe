@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.crawlSetting-mapper">
+	<select id="selectStockInfoList" resultType="com.myfinance.sprapp.stoka.crawlSetting.vo.StockInfoVO">
+		/* mappers.crawlSetting-mapper.selectStockInfoList */
+		SELECT
+			STOK_ID
+		    ,STOK_NM
+		    ,STOK_REGD_DT
+		    ,STOK_UPDT
+		 FROM TB_STOKA_STOK_LIST
+	</select>
+</mapper>
