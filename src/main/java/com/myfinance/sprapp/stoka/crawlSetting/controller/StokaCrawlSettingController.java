@@ -35,21 +35,36 @@ public class StokaCrawlSettingController {
 	@Autowired
 	StokaCrawlSettingService stokaCrawlSettingService;
 
+	//주식 리스트 조회
 	@RequestMapping(value="/stoka/stokaStokList.do", method = RequestMethod.GET)
 	public ModelAndView StokaStokList( Model model, HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
 
 		List<StockInfoVO> stockList = stokaCrawlSettingService.StokaStokList();
 
-		for(StockInfoVO a : stockList ) {
-			System.out.println(a.toString());
-		}
-
 		mv.setViewName(BASEPATH+"/stokaStokList");
 		mv.addObject("stokList", stockList);
 		return mv;
 	}
 
+	//주식 리스트 등록
+	@RequestMapping(value="/stoka/stokaInsertStok.do", method = RequestMethod.GET)
+	@ResponseBody
+	public ModelAndView stokaInsertStok( StockInfoVO stockInfoVo, HttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView();
+
+		//insert
+
+		//set selection
+		stokaCrawlSettingService.stokaInsertStok(stockInfoVo);
+
+		List<StockInfoVO> stockList = stokaCrawlSettingService.StokaStokList();
+
+		mv.setViewName(BASEPATH+"/stokaStokList");
+		mv.addObject("stokList", stockList);
+
+		return mv;
+	}
 
 
 }

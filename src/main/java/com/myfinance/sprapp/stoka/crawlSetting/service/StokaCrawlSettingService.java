@@ -16,8 +16,14 @@ public class StokaCrawlSettingService {
 	@Autowired
 	CommonDao commonDao;
 
+	//주식 리스트 조회
 	public List<StockInfoVO> StokaStokList() throws Exception{
 		return commonDao.selectList("mappers.crawlSetting-mapper.selectStockInfoList");
+	}
+
+	//주식 등록
+	public void stokaInsertStok(StockInfoVO stockInfoVo) throws Exception {
+		commonDao.insert("mappers.crawlSetting-mapper.stokaInsertStok", stockInfoVo);
 	}
 
 

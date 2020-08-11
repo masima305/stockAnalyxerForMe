@@ -33,9 +33,10 @@
 	</br>
 	<div>
 		<h1>insert stock</h1>
-		<form id="stockInsertList">
+		<form id="stockInsertList" action="/stoka/stokaInsertStok.do" method="get">
 			<input type="text" name="stokId" id="stokId" placeholder="stock id">
 			<input type="text" name="stokNm" id="stokNm" placeholder="stock name">
+			<input type="submit" id="submitStokInfo">
 		</form>
 	</div>
 </body>

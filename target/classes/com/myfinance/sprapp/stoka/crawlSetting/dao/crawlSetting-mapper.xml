@@ -10,4 +10,13 @@
 		    ,STOK_UPDT
 		 FROM TB_STOKA_STOK_LIST
 	</select>
+	<insert id="stokaInsertStok" parameterType="com.myfinance.sprapp.stoka.crawlSetting.vo.StockInfoVO">
+		/* mappers.crawlSetting-mapper.stokaInsertStok */
+		INSERT INTO TB_STOKA_STOK_LIST VALUES (
+			#{stokId}
+			,#{stokNm}
+			,NOW()
+			,NOW()
+		)
+	</insert>
 </mapper>
