@@ -89,6 +89,13 @@ public class HomeController {
 //			
 		model.addAttribute("serverTime", " : "+formattedDate+" : "+hv.getAaa()+"<br>"+a+"<br>"+b+"<br>");
 		
+		
+		//TODO : 투두 리스트 일단 여기에서 관리.
+		/*
+		 * 1. 장 끝나면 그 시간 기준으로 장외에서 살 수 있는 싼 종목들 빠르게 훑어서 알려주는 기능.
+		 * 2. 순이익 비교할때 가장 최신자의 연도가 같은데, 내용이 다르면 그때 INSERT하는걸로!.
+		 */
+		
 		return "home";
 	}
 	

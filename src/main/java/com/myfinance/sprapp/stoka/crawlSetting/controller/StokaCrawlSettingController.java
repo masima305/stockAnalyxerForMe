@@ -55,6 +55,7 @@ public class StokaCrawlSettingController {
 
 		//insert
 
+
 		//set selection
 		stokaCrawlSettingService.stokaInsertStok(stockInfoVo);
 
@@ -65,6 +66,28 @@ public class StokaCrawlSettingController {
 
 		return mv;
 	}
+
+	//주식 크롤링 시작
+		@RequestMapping(value="/stoka/stokaCrawlStart.do", method = RequestMethod.GET)
+		@ResponseBody
+		public ModelAndView stokaCrawlStart( StockInfoVO stockInfoVo, HttpServletRequest request) throws Exception {
+			ModelAndView mv = new ModelAndView();
+
+			//주식 크롤링 리스트 가지고 오기.
+			List<StockInfoVO> stockList = stokaCrawlSettingService.StokaStokList();
+
+			//start service 호출
+			stokaCrawlSettingService.stokaCrawlStart(stockInfoVo);
+
+
+
+
+			mv.setViewName(BASEPATH+"/stokaStokList");
+			mv.addObject("stokList", stockList);
+
+			return mv;
+		}
+
 
 
 }
