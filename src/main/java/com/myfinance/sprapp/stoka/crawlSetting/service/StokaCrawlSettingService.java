@@ -36,6 +36,7 @@ public class StokaCrawlSettingService {
 
 		System.out.println("크롤링 시작");
 
+		stockCrawler.CrawlStart(stockInfoVo);
 
 	}
 

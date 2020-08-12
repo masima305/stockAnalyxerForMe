@@ -38,6 +38,8 @@
 			<input type="text" name="stokNm" id="stokNm" placeholder="stock name">
 			<input type="submit" id="submitStokInfo">
 		</form>
+
+		<a href="/stoka/stokaCrawlStart.do">주식크롤</a>
 	</div>
 </body>
 </html>
