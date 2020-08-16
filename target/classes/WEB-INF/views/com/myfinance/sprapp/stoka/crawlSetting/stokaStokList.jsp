@@ -2,44 +2,278 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Stoka 크롤링 배치 대상주식 리스트</title>
-</head>
-<body>
-	<div>
-		<h1>주식관리현황</h1>
-		<table border="1">
-			<th>순서</th>
-			<th>주식이름</th>
-			<th>주식ID</th>
-			<tr>
-				<td colspan="3">nothing listed</td>
-			</tr>
-			<c:forEach var="item" items="${stokList}" varStatus="status">
-			<tr>
-				<th>${status.count}</th>
-	    		<th><c:out value="${item.stokId}" /></th>
-	    		<th><c:out value="${item.stokNm}" /></th>
-			</tr>
-			</c:forEach>
-		</table>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header card-header-primary">
+						<h4 class="card-title ">Simple Table</h4>
+						<p class="card-category"> Here is a subtitle for this table</p>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table">
+								<thead class=" text-primary">
+									<th>
+										ID
+									</th>
+									<th>
+										Name
+									</th>
+									<th>
+										Country
+									</th>
+									<th>
+										City
+									</th>
+									<th>
+										Salary
+									</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											1
+										</td>
+										<td>
+											Dakota Rice
+										</td>
+										<td>
+											Niger
+										</td>
+										<td>
+											Oud-Turnhout
+										</td>
+										<td class="text-primary">
+											$36,738
+										</td>
+									</tr>
+									<tr>
+										<td>
+											2
+										</td>
+										<td>
+											Minerva Hooper
+										</td>
+										<td>
+											Curaçao
+										</td>
+										<td>
+											Sinaai-Waas
+										</td>
+										<td class="text-primary">
+											$23,789
+										</td>
+									</tr>
+									<tr>
+										<td>
+											3
+										</td>
+										<td>
+											Sage Rodriguez
+										</td>
+										<td>
+											Netherlands
+										</td>
+										<td>
+											Baileux
+										</td>
+										<td class="text-primary">
+											$56,142
+										</td>
+									</tr>
+									<tr>
+										<td>
+											4
+										</td>
+										<td>
+											Philip Chaney
+										</td>
+										<td>
+											Korea, South
+										</td>
+										<td>
+											Overland Park
+										</td>
+										<td class="text-primary">
+											$38,735
+										</td>
+									</tr>
+									<tr>
+										<td>
+											5
+										</td>
+										<td>
+											Doris Greene
+										</td>
+										<td>
+											Malawi
+										</td>
+										<td>
+											Feldkirchen in Kärnten
+										</td>
+										<td class="text-primary">
+											$63,542
+										</td>
+									</tr>
+									<tr>
+										<td>
+											6
+										</td>
+										<td>
+											Mason Porter
+										</td>
+										<td>
+											Chile
+										</td>
+										<td>
+											Gloucester
+										</td>
+										<td class="text-primary">
+											$78,615
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="card card-plain">
+					<div class="card-header card-header-primary">
+						<h4 class="card-title mt-0"> Table on Plain Background</h4>
+						<p class="card-category"> Here is a subtitle for this table</p>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-hover">
+								<thead class="">
+									<th>
+										ID
+									</th>
+									<th>
+										Name
+									</th>
+									<th>
+										Country
+									</th>
+									<th>
+										City
+									</th>
+									<th>
+										Salary
+									</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											1
+										</td>
+										<td>
+											Dakota Rice
+										</td>
+										<td>
+											Niger
+										</td>
+										<td>
+											Oud-Turnhout
+										</td>
+										<td>
+											$36,738
+										</td>
+									</tr>
+									<tr>
+										<td>
+											2
+										</td>
+										<td>
+											Minerva Hooper
+										</td>
+										<td>
+											Curaçao
+										</td>
+										<td>
+											Sinaai-Waas
+										</td>
+										<td>
+											$23,789
+										</td>
+									</tr>
+									<tr>
+										<td>
+											3
+										</td>
+										<td>
+											Sage Rodriguez
+										</td>
+										<td>
+											Netherlands
+										</td>
+										<td>
+											Baileux
+										</td>
+										<td>
+											$56,142
+										</td>
+									</tr>
+									<tr>
+										<td>
+											4
+										</td>
+										<td>
+											Philip Chaney
+										</td>
+										<td>
+											Korea, South
+										</td>
+										<td>
+											Overland Park
+										</td>
+										<td>
+											$38,735
+										</td>
+									</tr>
+									<tr>
+										<td>
+											5
+										</td>
+										<td>
+											Doris Greene
+										</td>
+										<td>
+											Malawi
+										</td>
+										<td>
+											Feldkirchen in Kärnten
+										</td>
+										<td>
+											$63,542
+										</td>
+									</tr>
+									<tr>
+										<td>
+											6
+										</td>
+										<td>
+											Mason Porter
+										</td>
+										<td>
+											Chile
+										</td>
+										<td>
+											Gloucester
+										</td>
+										<td>
+											$78,615
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	</br>
-	</br>
-	</br>
-	</br>
-	<div>
-		<h1>insert stock</h1>
-		<form id="stockInsertList" action="/stoka/stokaInsertStok.do" method="get">
-			<input type="text" name="stokId" id="stokId" placeholder="stock id">
-			<input type="text" name="stokNm" id="stokNm" placeholder="stock name">
-			<input type="submit" id="submitStokInfo">
-		</form>
 
-		<a href="/stoka/stokaCrawlStart.do">주식크롤</a>
-	</div>
-</body>
-</html>

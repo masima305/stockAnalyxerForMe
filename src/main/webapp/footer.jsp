@@ -6,23 +6,23 @@ pageEncoding="UTF-8"%>
 		<nav class="float-left">
 			<ul>
 				<li>
-					<a href="https://www.creative-tim.com">
-						Creative Tim
+					<a href="">
+						모든것이 잘 될지어다.
 					</a>
 				</li>
 				<li>
-					<a href="https://creative-tim.com/presentation">
-						About Us
+					<a href="">
+						자유를위해
 					</a>
 				</li>
 				<li>
-					<a href="http://blog.creative-tim.com">
-						Blog
+					<a href="">
+						지금의 나를 살아보자.
 					</a>
 				</li>
 				<li>
-					<a href="https://www.creative-tim.com/license">
-						Licenses
+					<a href="">
+						v0.8 (2020.08.16)
 					</a>
 				</li>
 			</ul>
@@ -32,7 +32,7 @@ pageEncoding="UTF-8"%>
 			<script>
 				document.write(new Date().getFullYear())
 			</script>, made with <i class="material-icons">favorite</i> by
-			<a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+			이정훈 for a better web.
 		</div>
 	</div>
 </footer>

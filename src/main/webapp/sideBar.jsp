@@ -3,7 +3,15 @@ pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
+<script>
+	$(document).ready(function() {
+		$(".nav-link").click(function(){
 
+			$(".divToggler").hide();
+			$("#"+$(this).attr('id').replace('menu','div')).show();
+		});
+ 	 });
+</script>
 
 <div class="sidebar" data-color="azure" data-background-color="white" data-image="${webappRoot}/resources/statics/assets/img/sidebar-1.jpg">
 
@@ -18,23 +26,23 @@ pageEncoding="UTF-8"%>
 	<div class="sidebar-wrapper">
 		<ul class="nav">
 			<li class="nav-item active">
-				<a class="nav-link" href="./dashboard.html">
+				<a class="nav-link" id="menuStokaStokDash">
 					<i class="material-icons">dashboard</i>
 					<p>현황판</p>
 				</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="./user.html">
+				<a class="nav-link" id="menuPerson">
 					<i class="material-icons">person</i>
 					<p>사용자관리</p>
 				</a>
 			</li>
 
 			<li class="nav-item ">
-				<a class="nav-link" href="./tables.html">
+				<a class="nav-link" id="menuStokaStokList">
 					<i class="material-icons">content_paste</i>
-					<p>테이블리스트</p>
+					<p>주식 리스트 관리</p>
 				</a>
 			</li>
 
