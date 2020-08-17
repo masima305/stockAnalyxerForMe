@@ -1,17 +1,47 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="false"%>
+<% request.setCharacterEncoding("utf-8"); %>
+<% response.setContentType("text/html; charset=utf-8"); %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <script>
 
 	//화면초기화
 	$(document).ready(function() {
 
 		$("#menuStokaStokList").click(function(){
-
+			callStokList();
 
 		});
 
 	});
+
+
+	function callStokList(){
+
+		var sendData = {}
+
+		$.ajax({
+			url:'/stoka/stokaStokList.do'
+			, type:'post'
+			, data:sendData
+			,contentType: 'application/x-www-form-urlencoded; charset=euc-kr'
+			, timeout: 10000
+            , datatype: 'json'
+			, success:function(data){
+
+				//jsontext에 JSON객체를 넣는다.
+				var jsontext = data;
+
+				//JSON.parse를 이용해 jsontext를 파싱해 리스트(javascript list)로 만든후 contact에 넣어준다.
+				var contact = JSON.parse(jsontext);
+
+				console.log(contact);
+
+			}
+		});
+	}
 </script>
 	<div class="container-fluid">
 		<div class="row">
@@ -57,226 +87,6 @@
 										</td>
 										<td class="text-primary">
 											$36,738
-										</td>
-									</tr>
-									<tr>
-										<td>
-											2
-										</td>
-										<td>
-											Minerva Hooper
-										</td>
-										<td>
-											Curaçao
-										</td>
-										<td>
-											Sinaai-Waas
-										</td>
-										<td class="text-primary">
-											$23,789
-										</td>
-									</tr>
-									<tr>
-										<td>
-											3
-										</td>
-										<td>
-											Sage Rodriguez
-										</td>
-										<td>
-											Netherlands
-										</td>
-										<td>
-											Baileux
-										</td>
-										<td class="text-primary">
-											$56,142
-										</td>
-									</tr>
-									<tr>
-										<td>
-											4
-										</td>
-										<td>
-											Philip Chaney
-										</td>
-										<td>
-											Korea, South
-										</td>
-										<td>
-											Overland Park
-										</td>
-										<td class="text-primary">
-											$38,735
-										</td>
-									</tr>
-									<tr>
-										<td>
-											5
-										</td>
-										<td>
-											Doris Greene
-										</td>
-										<td>
-											Malawi
-										</td>
-										<td>
-											Feldkirchen in Kärnten
-										</td>
-										<td class="text-primary">
-											$63,542
-										</td>
-									</tr>
-									<tr>
-										<td>
-											6
-										</td>
-										<td>
-											Mason Porter
-										</td>
-										<td>
-											Chile
-										</td>
-										<td>
-											Gloucester
-										</td>
-										<td class="text-primary">
-											$78,615
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="card card-plain">
-					<div class="card-header card-header-primary">
-						<h4 class="card-title mt-0"> Table on Plain Background</h4>
-						<p class="card-category"> Here is a subtitle for this table</p>
-					</div>
-					<div class="card-body">
-						<div class="table-responsive">
-							<table class="table table-hover">
-								<thead class="">
-									<th>
-										ID
-									</th>
-									<th>
-										Name
-									</th>
-									<th>
-										Country
-									</th>
-									<th>
-										City
-									</th>
-									<th>
-										Salary
-									</th>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											1
-										</td>
-										<td>
-											Dakota Rice
-										</td>
-										<td>
-											Niger
-										</td>
-										<td>
-											Oud-Turnhout
-										</td>
-										<td>
-											$36,738
-										</td>
-									</tr>
-									<tr>
-										<td>
-											2
-										</td>
-										<td>
-											Minerva Hooper
-										</td>
-										<td>
-											Curaçao
-										</td>
-										<td>
-											Sinaai-Waas
-										</td>
-										<td>
-											$23,789
-										</td>
-									</tr>
-									<tr>
-										<td>
-											3
-										</td>
-										<td>
-											Sage Rodriguez
-										</td>
-										<td>
-											Netherlands
-										</td>
-										<td>
-											Baileux
-										</td>
-										<td>
-											$56,142
-										</td>
-									</tr>
-									<tr>
-										<td>
-											4
-										</td>
-										<td>
-											Philip Chaney
-										</td>
-										<td>
-											Korea, South
-										</td>
-										<td>
-											Overland Park
-										</td>
-										<td>
-											$38,735
-										</td>
-									</tr>
-									<tr>
-										<td>
-											5
-										</td>
-										<td>
-											Doris Greene
-										</td>
-										<td>
-											Malawi
-										</td>
-										<td>
-											Feldkirchen in Kärnten
-										</td>
-										<td>
-											$63,542
-										</td>
-									</tr>
-									<tr>
-										<td>
-											6
-										</td>
-										<td>
-											Mason Porter
-										</td>
-										<td>
-											Chile
-										</td>
-										<td>
-											Gloucester
-										</td>
-										<td>
-											$78,615
 										</td>
 									</tr>
 								</tbody>

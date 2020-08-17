@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myfinance.sprapp.HomeController;
 import com.myfinance.sprapp.stoka.crawlSetting.service.StokaCrawlSettingService;
 import com.myfinance.sprapp.stoka.crawlSetting.vo.StockInfoVO;
@@ -36,15 +37,18 @@ public class StokaCrawlSettingController {
 	StokaCrawlSettingService stokaCrawlSettingService;
 
 	//주식 리스트 조회
-	@RequestMapping(value="/stoka/stokaStokList.do", method = RequestMethod.GET)
-	public ModelAndView StokaStokList( Model model, HttpServletRequest request) throws Exception {
+	@RequestMapping(value="/stoka/stokaStokList.do", method =
+					RequestMethod.POST, produces ="application/text; charset=utf8")
+
+	public @ResponseBody Object StokaStokList(HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
 
 		List<StockInfoVO> stockList = stokaCrawlSettingService.StokaStokList();
 
-		mv.setViewName(BASEPATH+"/stokaStokList");
-		mv.addObject("stokList", stockList);
-		return mv;
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonStr = mapper.writeValueAsString(stockList);
+
+		return jsonStr;
 	}
 
 	//주식 리스트 등록
@@ -52,9 +56,6 @@ public class StokaCrawlSettingController {
 	@ResponseBody
 	public ModelAndView stokaInsertStok( StockInfoVO stockInfoVo, HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
-
-		//insert
-
 
 		//set selection
 		stokaCrawlSettingService.stokaInsertStok(stockInfoVo);
