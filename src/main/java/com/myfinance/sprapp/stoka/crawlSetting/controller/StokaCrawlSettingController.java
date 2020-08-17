@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -41,7 +42,6 @@ public class StokaCrawlSettingController {
 					RequestMethod.POST, produces ="application/text; charset=utf8")
 
 	public @ResponseBody Object StokaStokList(HttpServletRequest request) throws Exception {
-		ModelAndView mv = new ModelAndView();
 
 		List<StockInfoVO> stockList = stokaCrawlSettingService.StokaStokList();
 
@@ -52,20 +52,19 @@ public class StokaCrawlSettingController {
 	}
 
 	//주식 리스트 등록
-	@RequestMapping(value="/stoka/stokaInsertStok.do", method = RequestMethod.GET)
-	@ResponseBody
-	public ModelAndView stokaInsertStok( StockInfoVO stockInfoVo, HttpServletRequest request) throws Exception {
-		ModelAndView mv = new ModelAndView();
+	@RequestMapping(value="/stoka/stokaInsertStok.do", method = RequestMethod.POST)
+	public @ResponseBody Object stokaInsertStok(@RequestBody StockInfoVO stockInfoVo, HttpServletRequest request) throws Exception {
 
+		String jsonStr = "unproceed";
 		//set selection
-		stokaCrawlSettingService.stokaInsertStok(stockInfoVo);
+		try {
+			stokaCrawlSettingService.stokaInsertStok(stockInfoVo);
+			jsonStr = "success";
+		}catch(Exception e) {
+			jsonStr = "error!!! : "+e.getMessage();
+		}
 
-		List<StockInfoVO> stockList = stokaCrawlSettingService.StokaStokList();
-
-		mv.setViewName(BASEPATH+"/stokaStokList");
-		mv.addObject("stokList", stockList);
-
-		return mv;
+		return jsonStr;
 	}
 
 	//주식 크롤링 시작

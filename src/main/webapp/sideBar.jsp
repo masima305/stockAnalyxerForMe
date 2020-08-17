@@ -7,9 +7,12 @@ pageEncoding="UTF-8"%>
 	$(document).ready(function() {
 		$(".nav-link").click(function(){
 
+			//change nav-bar status
+			$(".nav-item").removeClass("active");
+			$(this).parent().addClass("active");
+
 			$(".divToggler").hide();
 			$("#"+$(this).attr('id').replace('menu','div')).show();
-
 		});
  	 });
 </script>

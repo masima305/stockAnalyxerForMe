@@ -10,6 +10,7 @@
 		    ,STOK_REGD_DT
 		    ,STOK_UPDT
 		 FROM TB_STOKA_STOK_LIST
+		 ORDER BY STOK_UPDT DESC
 	</select>
 	<insert id="stokaInsertStok" parameterType="com.myfinance.sprapp.stoka.crawlSetting.vo.StockInfoVO">
 		/* mappers.crawlSetting-mapper.stokaInsertStok 주식 등록*/
