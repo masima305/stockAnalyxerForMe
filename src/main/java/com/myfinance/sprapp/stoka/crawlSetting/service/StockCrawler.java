@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import com.myfinance.sprapp.CommonDao;
+import com.myfinance.sprapp.stoka.crawlSetting.vo.StockCrawlerSelector;
 import com.myfinance.sprapp.stoka.crawlSetting.vo.StockInfoVO;
 
 //실질적인 주식 크롤러이다.
@@ -19,6 +20,8 @@ public class StockCrawler {
 
 	//TODO 얘네 그냥 다 Bean Object로 관리하자. 프로퍼티 쓸거없이.
 
+	@Autowired
+	StockCrawlerSelector CSelector;
 
 	@Autowired
 	CommonDao commonDao;
@@ -39,7 +42,7 @@ public class StockCrawler {
 		//크롤 실현부
 		if(isNothing) {
 			//메인 페이지에서 모두 크롤링 해오기
-			Document rawData = crawlMainPage(stockInfoVo.getStokId());
+			Document rawData = crawlMainPage(CSelector.getNaverMain(),stockInfoVo.getStokId());
 
 			Elements elementA = null;
 			Elements elementB = null;
@@ -47,25 +50,13 @@ public class StockCrawler {
 			//당기 순이익 가지고 오기.
 
 
-			elementA = rawData.select(NMNM);
-			elementB = rawData.select(NETP_YM3);
+			String yearlabelM3 = rawData.select(CSelector.getNaverYearlabelM3()).text();
+			String yearnetpM3 = rawData.select(CSelector.getNaverYearnetpM3()).text();
 
-			String a = elementA.html();
-			String b = elementA.text();
-
-			String c = elementB.html();
-			String d = elementB.text();
-
-			System.out.println("elemA : html : "+a);
-			System.out.println("elemA : text : "+b);
-
-			System.out.println("elemB : html : "+c);
-			System.out.println("elemB : text : "+d);
+			System.out.println("yearlabelM3 : "+yearlabelM3);
+			System.out.println("yearnetpM3 : "+yearnetpM3);
 
 		}
-
-
-
 
 		if(true) {
 			return "크롤링이 잘 끝났음.";
@@ -75,8 +66,8 @@ public class StockCrawler {
 	}
 
 	//stokId에 해당하는 종목의 메인페이지를 긁어온다.
-	public Document crawlMainPage(String stokId) throws IOException {
-		String ARTICLE_URL = MAIN_URL+stokId;
+	public Document crawlMainPage(String Url, String stokId) throws IOException {
+		String ARTICLE_URL = Url+stokId;
 		System.out.println(ARTICLE_URL);
 		//페이지 긁어서 가지고옴
 		Document rawData = Jsoup.connect(ARTICLE_URL)

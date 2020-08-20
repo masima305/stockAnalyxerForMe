@@ -68,7 +68,7 @@ public class StokaCrawlSettingController {
 	}
 
 	//주식 크롤링 시작
-		@RequestMapping(value="/stoka/stokaCrawlStart.do", method = RequestMethod.GET)
+		@RequestMapping(value="/stoka/stokaCrawlStart.do", method = RequestMethod.POST)
 		@ResponseBody
 		public ModelAndView stokaCrawlStart( StockInfoVO stockInfoVo, HttpServletRequest request) throws Exception {
 			ModelAndView mv = new ModelAndView();
