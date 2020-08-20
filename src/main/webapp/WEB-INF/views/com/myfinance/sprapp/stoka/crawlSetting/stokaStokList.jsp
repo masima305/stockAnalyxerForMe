@@ -16,8 +16,8 @@
 		});
 
 		$("#insertStockBtn").click(function(){
-
-			insertStock();
+			alert("func is ready but closed")
+			//insertStock();
 
 			});
 
@@ -26,6 +26,8 @@
 	//insert stock
 	function insertStock(){
 		var sendData = {}
+
+		//need valueCheck
 		sendData.stokNm = $("#inpStokNm").val();
 		sendData.stokId = $("#inpStokId").val();
 
@@ -88,8 +90,8 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header card-header-primary">
-						<h4 class="card-title ">Simple Table</h4>
-						<p class="card-category"> Here is a subtitle for this table</p>
+						<h4 class="card-title ">주식등록</h4>
+						<p class="card-category"> 주식코드와 주식 이름을 등록해주세요</p>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
@@ -117,8 +119,8 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header card-header-primary">
-						<h4 class="card-title ">Simple Table</h4>
-						<p class="card-category"> Here is a subtitle for this table</p>
+						<h4 class="card-title ">관리하고 있는 주식 리스트</h4>
+						<p class="card-category"> 지금 분석기가 관리하고 있는 주식 리스트입니다.</p>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">

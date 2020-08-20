@@ -76,13 +76,14 @@ public class StokaCrawlSettingController {
 			//주식 크롤링 리스트 가지고 오기.
 			List<StockInfoVO> stockList = stokaCrawlSettingService.StokaStokList();
 
-			for (int i = 0; i < stockList.size(); i++) {
-				//start service 호출
-				stokaCrawlSettingService.stokaCrawlStart(stockList.get(i));
-			}
+			//리얼
+//			for (int i = 0; i < stockList.size(); i++) {
+//				//start service 호출
+//				stokaCrawlSettingService.stokaCrawlStart(stockList.get(i));
+//			}
 
-
-
+			//실험용
+			stokaCrawlSettingService.stokaCrawlStart(stockList.get(0));
 
 
 			mv.setViewName(BASEPATH+"/stokaStokList");

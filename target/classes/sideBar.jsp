@@ -50,6 +50,15 @@ pageEncoding="UTF-8"%>
 				</a>
 			</li>
 
+			<li class="nav-item ">
+				<a class="nav-link" id="menuStokaStokReport">
+					<i class="material-icons">content_paste</i>
+					<p>주식 분석보기</p>
+				</a>
+			</li>
+
+<!-- 			TODO : 오늘의 추천주 -->
+
 <!-- 			<li class="nav-item "> -->
 <!-- 				<a class="nav-link" href="./typography.html"> -->
 <!-- 					<i class="material-icons">library_books</i> -->

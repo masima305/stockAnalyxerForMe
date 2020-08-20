@@ -19,35 +19,6 @@ public class StockCrawler {
 
 	//TODO 얘네 그냥 다 Bean Object로 관리하자. 프로퍼티 쓸거없이.
 
-	//네이버 금융 메인
-	@Value("#{crlSet['croll.naver.main']}")
-	String MAIN_URL;
-
-	//재무연도 -3년
-	@Value("#{crlSet['croll.naversel.yearlabel.mthree']}")
-	String LABEL_YM3;
-
-	//재무연도 -3년
-	@Value("#{crlSet['croll.naversel.yearnetp.mthree']}")
-	String NETP_YM3;
-
-
-	//재무연도 -2년
-	@Value("#{crlSet['croll.naversel.yearlabel.mtwo']}")
-	String LABEL_YM2;
-
-	//재무연도 -1년
-	@Value("#{crlSet['croll.naversel.yearlabel.mone']}")
-	String LABEL_YM1;
-
-	//재무연도 0년
-	@Value("#{crlSet['croll.naversel.yearlabel.thisyear']}")
-	String LABEL_YM0;
-
-	//테스트용 이름
-	@Value("#{crlSet['croll.testNm']}")
-	String NMNM;
-
 
 	@Autowired
 	CommonDao commonDao;
