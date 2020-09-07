@@ -50,12 +50,20 @@ public class StockCrawler {
 			//당기 순이익 가지고 오기.
 
 
+			
+			
+			
 			String yearlabelM3 = rawData.select(CSelector.getNaverYearlabelM3()).text();
 			String yearnetpM3 = rawData.select(CSelector.getNaverYearnetpM3()).text();
 
 			System.out.println("yearlabelM3 : "+yearlabelM3);
 			System.out.println("yearnetpM3 : "+yearnetpM3);
 
+			
+			
+			
+			
+			
 		}
 
 		if(true) {

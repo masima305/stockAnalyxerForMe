@@ -31,7 +31,7 @@ pageEncoding="UTF-8"%>
 			&copy;
 			<script>
 				document.write(new Date().getFullYear())
-			</script>, made with <i class="material-icons">favorite</i> by
+			</script>, made with <i class="material-icons">favorite</i>HJ<i class="material-icons">favorite</i> by
 			이정훈 for a better web.
 		</div>
 	</div>

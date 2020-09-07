@@ -10,12 +10,12 @@ public class StockCrawlerSelector {
 
 
 //	## 네이버금융 ##
+
 //	## 네이버 메인 ##
 	private String naverMain = "https://finance.naver.com/item/main.nhn?code=";
 
 //	## 네이버 시세 ##
 	private String naverSise = "https://finance.naver.com/item/sise.nhn?code=";
-
 
 //	## 네이버 뉴스 ##
 	private String naverNews = "https://finance.naver.com/item/news.nhn?code=";
@@ -31,77 +31,105 @@ public class StockCrawlerSelector {
 //	## 연도 라벨
 
 //	## 재무연도 -3년##
-	private String naverYearlabelM3 =
+	private String labelYm3 =
 			"#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(1)";
 
 //	## 재무연도 -2년##
-	private String naverYearlabelM2 =
+	private String labelYm2 =
 			"#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(2)";
 
 //	## 재무연도 -1년##
-	private String naverYearlabelM1 =
+	private String labelYm1 =
 			"#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(3)";
 
 //	## 재무연도 0년##
-	private String naverYearlabelTY =
+	private String labelYm0 =
 			"#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th.t_line.cell_strong";
 //
 //	## ------------------ 메인 - 최근 연간 당기순이익 ------------------------ ##
 
-
-	private String naverYearnetpM3 =
+//	## -3년 당기순이익 ##
+	private String netpYm3 =
 			"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(2)";
 
-	private String naverYearnetpM2 =
+//	## -2년 당기순이익 ##
+	private String netpYm2 =
 			"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(3)";
 
-	private String naverYearnetpM1 =
+//	## -1년 당기순이익 ##
+	private String netpYm1 =
 			"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(4)";
 
-	private String naverYearnetpTY =
+//	## 당해 당기순이익 ##
+	private String netpYm0 =
 			"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td.t_line.cell_strong";
 
 //	## ------------------ 메인 - 최근 분기 당기순이익 라벨------------------------ ##
-//	croll.naversel.coinfosel.mfive=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(5)
-//
-//	croll.naversel.coinfosel.mfour=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(6)
-//
-//	croll.naversel.coinfosel.mthree=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(7)
-//
-//	croll.naversel.coinfosel.mtwo=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(8)
-//
-//	croll.naversel.coinfosel.mone=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(9)
-//
-//	croll.naversel.coinfosel.pone=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(10)
+
+//	## 5분기 전 당기순이익 ##
+	private String labelQm5 =
+			"croll.naversel.coinfosel.mfive=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(5)";
+
+//	## 4분기 전 당기순이익 ##
+	private String labelQm4 =
+			"croll.naversel.coinfosel.mfour=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(6)";
+
+//	## 3분기 전 당기순이익 ##
+	private String labelQm3 =
+			"croll.naversel.coinfosel.mthree=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(7)";
+
+//	## 2분기 전 당기순이익 ##
+	private String labelQm2 =
+			"croll.naversel.coinfosel.mtwo=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(8)";
+
+//	## 1분기 전 당기순이익 ##
+	private String labelQm1 =
+			"croll.naversel.coinfosel.mone=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(9)";
+
+//	## 당 분기 당기순이익 ##
+	private String labelQm0 =
+			"croll.naversel.coinfosel.pone=#content > div.section.cop_analysis > div.sub_section > table > thead > tr:nth-child(2) > th:nth-child(10)";
 
 //	## ------------------ 메인 - 최근 분기 당기순이익 금액------------------------ ##
 
-//	#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(6)
+	private String netpQm5 =
+			"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(6)";
 
-//	#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(7)
+	private String netpQm4 =
+			"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(7)";
 
-//	#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(8)
+	private String netpQm3 =
+			"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(8)";
 
-//	#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(9)
+	private String netpQm2 =
+			"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(9)";
 
-//	#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(10)
+	private String netpQm1 =
+			"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td:nth-child(10)";
 
-//	#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td.last.cell_strong
+	private String netpQm0 =
+			"#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(3) > td.last.cell_strong";
 
 //	## ------------------ 기본정보 ------------------------ ##
 
 //	시총
 //	#_market_sum
+
 //	저가
 //  #chart_area > div.rate_info > table > tbody > tr:nth-child(2) > td:nth-child(2) > em.no_down
+
 //	고가
 //	#chart_area > div.rate_info > table > tbody > tr:nth-child(1) > td:nth-child(2) > em.no_up
+
 //	종가
 //	#chart_area > div.rate_info > div > p.no_today
+
 //	당좌비율
 //	#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(8) > td:nth-child(10)
+
 //	부채비율
 //	#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(7) > td:nth-child(10)
+
 //	유보율
 //	#content > div.section.cop_analysis > div.sub_section > table > tbody > tr:nth-child(9) > td:nth-child(10)
 
@@ -122,113 +150,7 @@ public class StockCrawlerSelector {
 //	EPS 구하는 방식은 재무제표 보는법에서 12.손익계산서 III(http://blog.naver.com/donghm/202029260)를 참고하면 된다.
 
 
-
-	public String getNaverMain() {
-		return naverMain;
-	}
-
-	public void setNaverMain(String naverMain) {
-		this.naverMain = naverMain;
-	}
-
-	public String getNaverSise() {
-		return naverSise;
-	}
-
-	public void setNaverSise(String naverSise) {
-		this.naverSise = naverSise;
-	}
-
-	public String getNaverNews() {
-		return naverNews;
-	}
-
-	public void setNaverNews(String naverNews) {
-		this.naverNews = naverNews;
-	}
-
-	public String getNaverCoinfoS() {
-		return naverCoinfoS;
-	}
-
-	public void setNaverCoinfoS(String naverCoinfoS) {
-		this.naverCoinfoS = naverCoinfoS;
-	}
-
-	public String getNaverCoinfoE() {
-		return naverCoinfoE;
-	}
-
-	public void setNaverCoinfoE(String naverCoinfoE) {
-		this.naverCoinfoE = naverCoinfoE;
-	}
-
-	public String getNaverYearlabelM3() {
-		return naverYearlabelM3;
-	}
-
-	public void setNaverYearlabelM3(String naverYearlabelM3) {
-		this.naverYearlabelM3 = naverYearlabelM3;
-	}
-
-	public String getNaverYearlabelM2() {
-		return naverYearlabelM2;
-	}
-
-	public void setNaverYearlabelM2(String naverYearlabelM2) {
-		this.naverYearlabelM2 = naverYearlabelM2;
-	}
-
-	public String getNaverYearlabelM1() {
-		return naverYearlabelM1;
-	}
-
-	public void setNaverYearlabelM1(String naverYearlabelM1) {
-		this.naverYearlabelM1 = naverYearlabelM1;
-	}
-
-	public String getNaverYearlabelTY() {
-		return naverYearlabelTY;
-	}
-
-	public void setNaverYearlabelTY(String naverYearlabelTY) {
-		this.naverYearlabelTY = naverYearlabelTY;
-	}
-
-	public String getNaverYearnetpM3() {
-		return naverYearnetpM3;
-	}
-
-	public void setNaverYearnetpM3(String naverYearnetpM3) {
-		this.naverYearnetpM3 = naverYearnetpM3;
-	}
-
-	public String getNaverYearnetpM2() {
-		return naverYearnetpM2;
-	}
-
-	public void setNaverYearnetpM2(String naverYearnetpM2) {
-		this.naverYearnetpM2 = naverYearnetpM2;
-	}
-
-	public String getNaverYearnetpM1() {
-		return naverYearnetpM1;
-	}
-
-	public void setNaverYearnetpM1(String naverYearnetpM1) {
-		this.naverYearnetpM1 = naverYearnetpM1;
-	}
-
-	public String getNaverYearnetpTY() {
-		return naverYearnetpTY;
-	}
-
-	public void setNaverYearnetpTY(String naverYearnetpTY) {
-		this.naverYearnetpTY = naverYearnetpTY;
-	}
-
-
-
+//	5일선 20일선 치고 올라오는종목
 
 
 }
